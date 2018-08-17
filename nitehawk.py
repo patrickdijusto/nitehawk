@@ -29,13 +29,24 @@ else:
 	dx = api.PostDirectMessage(text=message,screen_name="@patrickdijusto")
 	print(message)
 	print(dx)
-	time.sleep(30)
+	time.sleep(5)
 	dx = api.PostDirectMessage(text=message,screen_name="@ejgertz")
 	print(dx)
-	time.sleep(30)
+	time.sleep(5)
 	dx = api.PostDirectMessage(text=message,screen_name="@proggrrl")
 	print(dx)
+	time.sleep(5)
+	dx = api.PostDirectMessage(text=message,screen_name="@tritia")
+	print(dx)
+	time.sleep(5)
+	dx = api.PostDirectMessage(text=message,screen_name="@harrislynn")
+	print(dx)
+	time.sleep(5)
+	dx = api.PostDirectMessage(text=message,screen_name="@saldenaro")
+	print(dx)
 	
+
+
 	
 	
 	
