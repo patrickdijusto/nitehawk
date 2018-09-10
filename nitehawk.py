@@ -6,12 +6,19 @@ import re
 
 import time
 
+file = open("change.txt","r")
+change = file.read()
+file.close
+print(change)
 
 html_content = urllib2.urlopen('https://nitehawkcinema.com/prospectpark/').read()
 
 matches = re.findall('We look forward to seeing you in Park Slope!', html_content);
 
-if len(matches) > 0: 
+
+
+
+if (len(matches) > 0) or (change == "1"): 
    print('No Change')
 else:
 	## Run entire twitter infrasctucture
@@ -44,11 +51,6 @@ else:
 	time.sleep(5)
 	dx = api.PostDirectMessage(text=message,screen_name="@saldenaro")
 	print(dx)
-	
-
-
-	
-	
-	
-
-	
+	file=open("change.txt","w")
+	file.write("1")
+	file.close()
