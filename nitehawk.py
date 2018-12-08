@@ -1,21 +1,32 @@
 import twitter
 from settings import *
-
-import urllib2
 import re
 
 import time
+
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen
+
+
+
+
+
+
 
 file = open("change.txt","r")
 change = file.read()
 file.close
 print(change)
 
-html_content = urllib2.urlopen('https://nitehawkcinema.com/prospectpark/').read()
+html_content = urlopen('https://nitehawkcinema.com/prospectpark/').read().decode('utf-8')
 
-matches = re.findall('We look forward to seeing you in Park Slope!', html_content);
+matches = re.findall('Nitehawk Cinema Prospect Park is set to open in 2018', html_content);
 
-
+print(matches)
 
 
 if (len(matches) > 0) or (change == "1"): 
